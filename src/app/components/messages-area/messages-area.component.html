@@ -1,0 +1,32 @@
+<div class="message-area">
+  <header class="message-area__header">
+    <h3 class="message-area__title">{{currentChannelLabel}}</h3>
+  </header>
+  <button
+    class="btn"
+    (click)="onReadMoreOld()"
+  >
+    Read More
+  </button>
+  <ul #messageContainer class="message-area__list">
+    <li 
+      class="message-area__message"
+      [ngClass]="currentUser === message.userId ? 'message-area__message--mine' : ''"
+      *ngFor="let message of messages; trackBy: trackByFn"
+    >
+      <div class="message-area__avatar">
+        <img class="message-area__avatar-img" [alt]="message.userId + 'user avatar'" [src]="getAvatar(message)"/>
+        <p class="message-area__user-name">{{message.userId}}</p>
+      </div>
+      <span class="message-area__text">{{message.text}}</span>
+      <span *ngIf="currentUser === message.userId" class="message-area__status">{{message?.status ? message.status : 'Sent'}}</span>
+      <span class="message-area__date">{{message.datetime | date: 'HH:mm'}}</span>
+    </li>
+  </ul>
+  <button 
+    class="btn"
+    (click)="onReadMoreNew()"
+  >
+    Read More
+  </button>
+</div>

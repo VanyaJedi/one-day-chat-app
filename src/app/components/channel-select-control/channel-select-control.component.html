@@ -1,0 +1,15 @@
+<div class="channel-control">
+  <label class="channel-control__label" for="users">2. Choose your channel</label>
+  <div *ngFor="let channel of channels">
+    <input 
+      class="channel-control__input visually-hidden"
+      type="radio"
+      name="channels"
+      [(ngModel)]="selectedChannelId"
+      [value]="channel.id"
+      [id]="'channel'+channel.id"
+      (ngModelChange)="onChannelChange()"
+    >
+    <label class="channel-control__input-label" [for]="'channel'+channel.id">{{channel.label}}</label>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.header {
+  padding: 20px 0;
+}
+
+.title {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.content {
+  flex-grow: 1;
+}
+

@@ -1,0 +1,13 @@
+<div class="user-control">
+  <label class="user-control__label" for="users">1. Choose your user</label><br>
+
+  <select 
+    class="user-control__select"
+    name="users"
+    id="users"
+    [(ngModel)]="selectedUser"
+    (ngModelChange)="onUserChange()"
+  >
+    <option *ngFor="let user of users" [value]="user">{{user}}</option>
+  </select>
+</div>

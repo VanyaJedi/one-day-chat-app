@@ -1,0 +1,13 @@
+<aside class="chat__controls">
+  <app-user-select-control></app-user-select-control>
+  <app-channel-select-control></app-channel-select-control>
+</aside>
+<section class="chat__messages">
+    <app-messages-area
+      [messages]="messages"
+      (readMore)="onReadMore($event)"
+    ></app-messages-area>  
+  <app-typing-area
+    (sendMessage)="onSendMessage($event)"
+  ></app-typing-area>
+</section>

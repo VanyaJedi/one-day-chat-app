@@ -1,0 +1,14 @@
+<div class="typing-area">
+  <textarea
+    class="typing-area__textarea"
+    placeholder="Type your message here..."
+    [(ngModel)]="text"
+    rows="3"
+  ></textarea>
+  <button
+    class="typing-area__btn btn"
+    (click)="onSendMessage()"
+  >
+    Send Message
+  </button>
+</div>
